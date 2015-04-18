@@ -2,6 +2,9 @@ just an empty Rails App project
 
 contact: eddie@5xruby.tw
 
+# Note
+please copy or rename the config/application.yml.sample and config/database.yml.sample to config/application.yml and config/database.yml.
+
 ## Version
 Rails 4.2.1
 
