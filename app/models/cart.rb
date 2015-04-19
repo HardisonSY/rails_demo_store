@@ -19,4 +19,16 @@ class Cart
     @items.empty?
   end
 
+  def serialize
+    items = @items.map do |item|
+      {"product_id" => item.product_id, "quantity" => item.quantity}
+    end
+
+    {
+      "cart" => {
+        "items" => items
+      }
+    }
+  end
+
 end

@@ -34,4 +34,25 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 3, cart.items.first.quantity
   end
 
+  test "serialize from cart" do
+    cart = Cart.new
+    cart.add_item(1)
+    cart.add_item(1)
+    cart.add_item(2)
+
+    assert_equal cart.serialize, session_hash
+    p cart.serialize
+  end
+
+  private
+  def session_hash
+    {
+      "cart" => {
+        "items" => [
+          {"product_id" => 1, "quantity" => 2},
+          {"product_id" => 2, "quantity" => 1}
+        ]
+      }
+    }
+  end
 end
