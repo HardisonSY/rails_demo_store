@@ -8,6 +8,7 @@
       <td>電話</td>
       <td>地址</td>
       <td>狀態</td>
+      <td>處理</td>
     </tr>
   </thead>
   <% @orders.each do |order| %>
@@ -16,7 +17,7 @@
       <td><%= order.name %></td>
       <td><%= order.tel %></td>
       <td><%= order.address %></td>
-      <td>狀態</td>
+      <td><%= state_tag(order) %></td>
     </tr>
   <% end %>
 </table>
