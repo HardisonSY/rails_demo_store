@@ -2,6 +2,10 @@ defaults: &defaults
   Facebook:
     APP_ID: ********
     APP_SECRET: *************
+  Braintree:
+    MERCHANT_ID: ****************
+    PUBLIC_KEY: *****************
+    PRIVATE_KEY: **********************
 
 development:
   <<: *defaults

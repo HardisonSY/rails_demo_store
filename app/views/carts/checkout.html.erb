@@ -1,3 +1,7 @@
+<% content_for :js do %>
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<% end %>
+
 <h1>結帳</h1>
 
 <%= render 'mycart', cart: @cart %>
@@ -10,4 +14,19 @@
   <%= f.input :tel, label: false, placeholder:'電話' %>
   <%= f.input :address, label: false, placeholder:'地址' %>
   <%= f.input :will_receive_email %>
+  <hr />
+  <div id="dropin"></div>
+
+  <hr />
+  <%= f.submit '確認下訂' %>
+  <hr />
 <% end %>
+
+<script>
+braintree.setup(
+  "<%= @token %>",
+  'dropin', {
+    container: 'dropin'
+  });
+</script>
+

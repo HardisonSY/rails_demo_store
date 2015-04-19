@@ -34,6 +34,9 @@ gem 'bootstrap-kaminari-views'
 # settings
 gem 'settingslogic'
 
+# braintree
+gem 'braintree'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
