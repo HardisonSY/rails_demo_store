@@ -1,7 +1,7 @@
 class Backend::CategoriesController < Backend::BaseController
 
   def index
-    # TODO
+    @categories = Category.all
   end
 
   def new
