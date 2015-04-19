@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     get 'dashboard', to:'dashboard#index'
     resources :products, except:[:show]
     resources :categories, except:[:show]
+    resources :orders, except: [:destroy]
   end
 end

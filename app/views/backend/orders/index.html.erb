@@ -1,0 +1,22 @@
+<h1>訂單列表</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>訂單編號</td>
+      <td>收件人</td>
+      <td>電話</td>
+      <td>地址</td>
+      <td>狀態</td>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.name %></td>
+      <td><%= order.tel %></td>
+      <td><%= order.address %></td>
+      <td>狀態</td>
+    </tr>
+  <% end %>
+</table>
