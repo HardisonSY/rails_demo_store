@@ -1,0 +1,20 @@
+<h1>跳樓大拍賣，只剩今天</h1>
+
+<hr />
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>商品名稱</td>
+      <td>圖片</td>
+      <td></td>
+    </tr>
+  </thead>
+<% @products.each do |product| %>
+    <tr>
+      <td><%= link_to product.name, product %></td>
+      <td><%= image_tag product.image.small %></td>
+      <td></td>
+    </tr>
+<% end %>
+</table>

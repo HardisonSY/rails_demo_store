@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  resources :products
+
   namespace :backend do
     get 'dashboard', to:'dashboard#index'
     resources :products, except:[:show]
