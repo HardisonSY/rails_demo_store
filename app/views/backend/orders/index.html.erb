@@ -18,6 +18,9 @@
       <td><%= order.tel %></td>
       <td><%= order.address %></td>
       <td><%= state_tag(order) %></td>
+      <td>
+        <%= render 'state_buttons', order: order %>
+      </td>
     </tr>
   <% end %>
 </table>

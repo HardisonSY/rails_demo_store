@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     get 'dashboard', to:'dashboard#index'
     resources :products, except:[:show]
     resources :categories, except:[:show]
-    resources :orders, except: [:destroy]
+    resources :orders, except: [:destroy] do
+      post 'pay'
+      post 'out'
+      post 'deliver'
+    end
   end
 end

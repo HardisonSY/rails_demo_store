@@ -1,0 +1,7 @@
+<% if order.state == 'pending' %>
+  <%= link_to '付費', backend_order_pay_path(order), method: :post, class:'btn btn-xs btn-primary'%>
+<% elsif order.state == 'paid' %>
+    <%= link_to '出貨', backend_order_out_path(order), method: :post, class:'btn btn-xs btn-primary' %>
+<% elsif order.state == 'out' %>
+    <%= link_to '到貨', backend_order_deliver_path(order), method: :post, class:'btn btn-xs btn-primary' %>
+<% end %>
