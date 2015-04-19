@@ -3,10 +3,10 @@ class Cart
 
   def self.build_from_hash(hash)
 
-    items = if hash.nil?
-      []
+    if hash.nil?
+      items = []
     else
-      hash["cart"]["items"].map do |item|
+      items = hash["cart"]["items"].map do |item|
         CartItem.new(item["product_id"], item["quantity"])
       end
     end
