@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :products
   root 'products#index'
 
+  resource :cart do
+    post 'add', path: 'add/:id'
+  end
+
   namespace :backend do
     get 'dashboard', to:'dashboard#index'
     resources :products, except:[:show]
