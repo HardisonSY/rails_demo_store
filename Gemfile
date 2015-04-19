@@ -37,6 +37,9 @@ gem 'settingslogic'
 # braintree
 gem 'braintree'
 
+# state machine
+gem 'state_machine'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
