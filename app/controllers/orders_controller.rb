@@ -4,6 +4,9 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    #order_params["order_items"] = @cart.items.map
+    #render text: order_params
+    #return
     nonce = params[:payment_method_nonce]
     if @order.save
       Braintree::Transaction.sale(

@@ -1,0 +1,24 @@
+<h1>訂單資訊</h1>
+
+姓名：<%= @order.name %><br />
+電話：<%= @order.tel %><br />
+地址：<%= @order.address %><br />
+狀態：<%= state_tag(@order) %><br />
+
+<h3>內容</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <td>品項</td>
+      <td>數量</td>
+      <td>價錢</td>
+    </tr>
+  </thead>
+<% @order.order_items.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.quantity %></td>
+      <td>價錢</td>
+    </tr>
+<% end %>
+</ul>

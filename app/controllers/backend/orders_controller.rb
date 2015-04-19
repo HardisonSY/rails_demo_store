@@ -3,6 +3,10 @@ class Backend::OrdersController < Backend::BaseController
     @orders = Order.all
   end
 
+  def show
+    @order = Order.find_by(id: params[:id])
+  end
+
   def pay
     @order = Order.find(params[:order_id])
     if @order.pay

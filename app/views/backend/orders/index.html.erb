@@ -14,7 +14,7 @@
   <% @orders.each do |order| %>
     <tr>
       <td><%= order.id %></td>
-      <td><%= order.name %></td>
+      <td><%= link_to order.name, backend_order_path(order) %></td>
       <td><%= order.tel %></td>
       <td><%= order.address %></td>
       <td><%= state_tag(order) %></td>

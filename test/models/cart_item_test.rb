@@ -13,7 +13,7 @@ class CartItemTest < ActiveSupport::TestCase
   test "special price calculation (滿千送百)" do
     cart = Cart.new
     p1 = Product.create(name:'ruby book', price:100)
-    12.times do
+      12.times do
       cart.add_item(p1)
     end
     assert_equal 1100, cart.total_price
