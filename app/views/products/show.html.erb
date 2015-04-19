@@ -1,0 +1,7 @@
+<h1><%= @product.name %></h1>
+
+<%= image_tag @product.image.middle %>
+<hr />
+說明：<%= @product.description %><br />
+售價：<%= number_to_currency @product.price, precision:2 %><br />
+<%= link_to '回商品列表', products_path, class:'btn btn-primary' %>
