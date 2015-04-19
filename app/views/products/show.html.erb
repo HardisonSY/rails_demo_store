@@ -6,3 +6,5 @@
 售價：<%= number_to_currency @product.price, precision:2 %><br />
 <%= link_to '回商品列表', products_path, class:'btn btn-primary' %>
 <%= link_to '放到購物車', add_cart_path(@product), method: :post, class:'btn btn-danger' %>
+
+<%= session['cart'] %>
