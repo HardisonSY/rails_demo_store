@@ -3,4 +3,4 @@
 <%= render 'mycart', cart: @cart %>
 
 <%= link_to '繼續選購', products_path, class:'btn btn-primary' %>
-<%= link_to '結帳', checkout_cart_path, class:'btn btn-danger' %>
+<%= link_to '結帳', checkout_cart_path, class:'btn btn-danger' if @cart.total_price > 0 %>
