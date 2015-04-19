@@ -17,15 +17,7 @@
         <li><%= link_to '商品列表', products_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to '#' do %>
-
-          購物車
-          <% if @cart && !@cart.empty? %>
-            <span class="badge"><%= @cart.items.length %></span>
-          <% end %>
-
-        <% end %>
-        </li>
+        <li><%= render 'cart'%></li>
 
         <% if user_signed_in? %>
           <li class="dropdown">

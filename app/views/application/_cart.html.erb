@@ -1,0 +1,6 @@
+<%= link_to '#' do %>
+  購物車
+  <% if @cart && !@cart.empty? %>
+    <span class="badge"><%= @cart.items.length %></span>
+  <% end %>
+<% end %>
