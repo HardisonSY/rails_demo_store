@@ -21,4 +21,17 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 5, cart.items.first.quantity
     assert_equal 3, cart.items[1].quantity
   end
+
+  test "get item from cart" do
+    p1 = Product.create(name:'ruby book')
+
+    cart = Cart.new
+    cart.add_item(p1.id)
+    cart.add_item(p1.id)
+    cart.add_item(p1.id)
+
+    assert_kind_of Product, cart.items.first.product
+    assert_equal 3, cart.items.first.quantity
+  end
+
 end
