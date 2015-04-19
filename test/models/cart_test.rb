@@ -51,6 +51,20 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 2, cart.items[1].product_id
   end
 
+  test "calc total price of cart" do
+    cart = Cart.new
+    p1 = Product.create(name:'ruby book', price:10)
+    p2 = Product.create(name:'php book', price:20)
+
+    cart.add_item(p1)
+    cart.add_item(p1)
+    cart.add_item(p1)
+    cart.add_item(p2)
+    cart.add_item(p2)
+
+    assert_equal 70, cart.total_price
+  end
+
   private
   def session_hash
     {

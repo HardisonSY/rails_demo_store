@@ -44,4 +44,13 @@ class Cart
     }
   end
 
+  def total_price
+    total = items.inject(0) { |sum, item| sum + item.price }
+    if total >= 1000
+      total = total - 100
+    else
+      total
+    end
+  end
+
 end
