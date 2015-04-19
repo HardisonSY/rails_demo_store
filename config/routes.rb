@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get 'checkout'
   end
 
+  resources :orders, except: [:edit, :update, :destroy]
+
   namespace :backend do
     get 'dashboard', to:'dashboard#index'
     resources :products, except:[:show]
