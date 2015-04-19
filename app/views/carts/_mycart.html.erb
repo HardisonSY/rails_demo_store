@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>項目</td>
+      <td>數量</td>
+      <td>價錢</td>
+    </tr>
+  </thead>
+  <% cart.items.each do |item| %>
+  <tbody>
+    <tr>
+      <td><%= link_to item.product.name, product_path(item.product) %></td>
+      <td><%= item.quantity %></td>
+      <td><%= number_to_currency item.price %></td>
+    </tr>
+  </tbody>
+  <% end %>
+  <tfoot>
+    <tr>
+      <td colspan="2">總計</td>
+      <td><%= number_to_currency cart.total_price %></td>
+    </tr>
+  </tfoot>
+</table>

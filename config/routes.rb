@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resource :cart do
     post 'add', path: 'add/:id'
+    get 'checkout'
   end
 
   namespace :backend do
