@@ -1,0 +1,7 @@
+<h1><%= @product.name %></h1>
+<%= image_tag @product.image.middle %><br />
+描述：<%= @product.description %><br />
+售價：<%= @product.price %><br />
+<hr />
+<%= link_to '回商品列表', products_path, class:'btn btn-default' %>
+<%= link_to '加到購物車', '#', class:'btn btn-primary' %>
