@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426074054) do
+ActiveRecord::Schema.define(version: 20150426092645) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 20150426074054) do
     t.string   "tel"
     t.string   "address"
     t.boolean  "will_receive_email"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "state",              default: "pending"
   end
 
   create_table "products", force: :cascade do |t|
