@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resource :cart do
     post 'add', path: 'add/:id'
+    get 'checkout'
   end
 
   resources :products, only:[:index, :show]
