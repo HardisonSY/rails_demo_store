@@ -21,4 +21,42 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 3, cart.items.first.quantity
     assert_equal 5, cart.items.second.quantity
   end
+
+  test "get item from cart" do
+    p1 = Product.create(name:'ruby book')
+
+    cart = Cart.new
+    cart.add_item(p1.id)
+
+    assert_kind_of Product, cart.items.first.product
+  end
+
+  test "cart can serialize to hash" do
+    cart = Cart.new
+
+    cart.add_item(1)
+    cart.add_item(1)
+
+    cart.add_item(2)
+
+    assert_equal session_hash, cart.serialize
+  end
+
+  test "build cart from hash" do
+  end
+
+
+
+
+  private
+  def session_hash
+    {
+      "cart" => {
+        "items" => [
+          {"product_id" => 1, "quantity" => 2},
+          {"product_id" => 2, "quantity" => 1}
+        ]
+      }
+    }
+  end
 end
