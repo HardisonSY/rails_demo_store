@@ -11,4 +11,7 @@ class CartsController < ApplicationController
       redirect_to :back, notice: '無此商品'
     end
   end
+
+  def show
+  end
 end

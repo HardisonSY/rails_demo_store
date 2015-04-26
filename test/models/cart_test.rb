@@ -49,6 +49,22 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 1, cart.items.second.quantity
   end
 
+  test "cart can calculate total price" do
+    p1 = Product.create(name:'XXX', price:10)
+    p2 = Product.create(name:'YYY', price:20)
+    cart = Cart.new
+
+    3.times do
+      cart.add_item(p1.id)
+    end
+
+    5.times do
+      cart.add_item(p2.id)
+    end
+
+    assert_equal 130, cart.total_price
+  end
+
   private
   def session_hash
     {
