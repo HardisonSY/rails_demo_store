@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :initialize_cart
 
   def index
     @products = Product.page(params['page']).per(5)
