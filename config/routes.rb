@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get 'checkout'
   end
 
+  resources :orders, only:[:new, :create]
+
   resources :products, only:[:index, :show]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

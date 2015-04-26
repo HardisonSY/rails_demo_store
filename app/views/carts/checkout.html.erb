@@ -1,3 +1,14 @@
 <h1>結帳</h1>
 <%= render 'cart_list' %>
 <hr />
+
+<%= simple_form_for(@order) do |f| %>
+
+  <%= f.input :name, label:false, placeholder:'收件者姓名' %>
+  <%= f.input :tel, label:false, placeholder:'電話' %>
+  <%= f.input :address, label:false, placeholder:'收件地址' %>
+  <%= f.input :will_receive_email %>
+  <%= f.submit %>
+
+<% end %>
+<hr />
