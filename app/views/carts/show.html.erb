@@ -2,4 +2,4 @@
 
 <%= render 'cart_list' %>
 <%= link_to '繼續選購其它商品', products_path, class:'btn btn-default' %>
-<%= link_to '結帳', checkout_cart_path, class:'btn btn-danger' %>
+<%= link_to '結帳', checkout_cart_path, class:'btn btn-danger' if @cart.total_price > 0 %>
